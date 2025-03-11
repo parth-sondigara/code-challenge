@@ -4,8 +4,8 @@ source "https://rubygems.org"
 gem "rails", "~> 7.2.2", ">= 7.2.2.1"
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem "sprockets-rails"
-# Use sqlite3 as the database for Active Record
-gem "sqlite3", ">= 1.4"
+# Use postgres as the database for Active Record
+gem "pg"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
@@ -14,8 +14,8 @@ gem "importmap-rails"
 gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-# Build JSON APIs with ease [https://github.com/rails/jbuilder]
-gem "jbuilder"
+# Build JSON APIs with ease [https://github.com/jsonapi-serializer/jsonapi-serializer ]
+gem "jsonapi-serializer"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -43,6 +43,14 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "dotenv-rails"
+
+  gem "rspec-rails", "~> 7.1"
+
+  gem "factory_bot_rails", "~> 6.4"
+
+  gem "faker"
 end
 
 group :development do
@@ -51,6 +59,10 @@ group :development do
 
   # Highlight the fine-grained location where an error occurred [https://github.com/ruby/error_highlight]
   gem "error_highlight", ">= 0.4.0", platforms: [ :ruby ]
+
+  gem "letter_opener"
+
+  gem "rubocop", "~> 1.73"
 end
 
 group :test do
